@@ -1581,10 +1581,10 @@ class BundleDeals extends HTMLElement {
         _0x3aa159.removeAttribute("disabled");
       });
     } else {
-      this.mediaItemContainers[_0x186eba].classList.add("bundle-deals__media-item--disabled");
+      this.mediaItemContainers[_0x186eba].classList.remove("bundle-deals__media-item--disabled");
       _0x2defc6.classList.add("bundle-deals__product--deselected");
       _0x5e6618.forEach(_0x3c1538 => {
-        _0x3c1538.setAttribute("disabled", '');
+        _0x3c1538.removeAttribute("disabled", '');
       });
     }
     this.updateFormIds();
@@ -1893,10 +1893,10 @@ class CartDrawerUpsell extends ProductInfoUpsell {
       return;
     }
     if (this.toggleBtn) {
-      this.toggleBtn.setAttribute('enabled', '');
+      this.toggleBtn.setAttribute('disabled', '');
     }
     this.variantSelectElements.forEach(_0x3352c7 => {
-      _0x3352c7.setAttribute("enabled", '');
+      _0x3352c7.setAttribute("disabled", '');
     });
     this.productForm.handleSubmit();
   }
@@ -1906,10 +1906,10 @@ class CartDrawerUpsell extends ProductInfoUpsell {
       return;
     }
     if (this.toggleBtn) {
-      this.toggleBtn.setAttribute("enabled", '');
+      this.toggleBtn.setAttribute("disabled", '');
     }
     this.variantSelectElements.forEach(_0x3b3a3b => {
-      _0x3b3a3b.setAttribute("enabled", '');
+      _0x3b3a3b.setAttribute("disabled", '');
     });
     this.cartItems.updateQuantity(_0x5ee0c7.dataset.index, 0x0);
   }
