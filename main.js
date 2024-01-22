@@ -34,7 +34,7 @@ class CartRemoveButton extends HTMLElement {
   }
 }
 customElements.define('cart-remove-button', CartRemoveButton);
-var date = "2023-12-27";
+var date = "2024-01-22";
 class CartItems extends HTMLElement {
   constructor() {
     super();
