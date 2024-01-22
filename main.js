@@ -1738,20 +1738,7 @@ class CustomProductField extends HTMLElement {
     this.createInputs();
     if (this.isRequired && this.isText) {
       this.isValid = true;
-      this.atcButtons = document.querySelectorAll(".main-product-atc");
-      this.mainAtcButton = this.productForm.querySelector("#ProductSubmitButton-" + this.dataset.section);
-      this.mainAtcBtnLabel = this.mainAtcButton.querySelector(".main-atc__label");
-      this.mainAtcBtnError = this.mainAtcButton.querySelector(".main-atc__error");
-      this.atcErrorMsg = this.dataset.atcErrorMsg;
-      this.mainAtcButton.dataset.requiredFields = parseInt(this.mainAtcButton.dataset.requiredFields) + 0x1;
-      this.mainAtcBtnError.innerHTML = this.atcErrorMsg;
-      this.applyStickyAtcError = this.dataset.applyStickyAtcError === 'true';
-      this.stickyAtcButton = document.querySelector('#sticky-atc-' + this.dataset.section);
-      if (this.applyStickyAtcError && this.stickyAtcButton) {
-        this.stickyAtcBtnLabel = this.stickyAtcButton.querySelector(".sticky-atc__label");
-        this.stickyAtcBtnError = this.stickyAtcButton.querySelector(".sticky-atc__error");
-        this.stickyAtcBtnError.innerHTML = this.atcErrorMsg;
-      }
+      
       this.validateValue(this.prevValue, null);
     }
     if (this.input) {
@@ -1782,18 +1769,9 @@ class CustomProductField extends HTMLElement {
     if (_0x3ecf1e === this.isValid) {
       return;
     }
-    this.isValid = _0x3ecf1e;
-    if (_0x448ae1) {
-      if (this.isValid) {
-        _0x448ae1.classList.remove("input--error");
-        this.mainAtcButton.dataset.validFields = parseInt(this.mainAtcButton.dataset.validFields) + 0x1;
-      } else {
-        _0x448ae1.classList.add("input--error");
-        this.mainAtcButton.dataset.validFields = parseInt(this.mainAtcButton.dataset.validFields) - 0x1;
-      }
-    }
+    
     const _0x1862c3 = this.mainAtcButton.dataset.validFields === this.mainAtcButton.dataset.requiredFields;
-    const _0x702b3b = this.mainAtcButton.dataset.unavailable === "true";
+    const _0x702b3b = this.mainAtcButton.dataset.unavailable === "false";
     this.atcButtons.forEach(_0x25c589 => {
       if (_0x1862c3 && !_0x702b3b) {
         _0x25c589.removeAttribute("disabled");
@@ -1983,23 +1961,7 @@ class VariantSelects extends HTMLElement {
       if (this.currentVariant.id !== _0x3d150c) {
         return;
       }
-      const _0xd9cb65 = new DOMParser().parseFromString(_0x140044, 'text/html');
-      const _0x3de31c = document.getElementById("price-" + this.dataset.section);
-      const _0x48b275 = _0xd9cb65.getElementById('price-' + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x189b90 = document.getElementById("sticky-atc-separate-price-" + this.dataset.section);
-      const _0x1e8db4 = _0xd9cb65.getElementById("sticky-atc-separate-price-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x4347a4 = document.getElementById("sticky-atc-price-" + this.dataset.section);
-      const _0x44a634 = _0xd9cb65.getElementById('sticky-atc-price-' + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x1ba473 = document.getElementById("sticky-atc-image-" + this.dataset.section);
-      const _0xee1a26 = _0xd9cb65.getElementById("sticky-atc-image-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x2fcbb4 = document.getElementById('main-atc-price-' + this.dataset.section);
-      const _0x36c5fd = _0xd9cb65.getElementById("main-atc-price-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x39990f = document.querySelectorAll("[id^=\"custom-label-" + this.dataset.section + "\"]");
-      const _0x1a9359 = _0xd9cb65.querySelectorAll("[id^=\"custom-label-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section) + "\"]");
-      const _0x15da52 = _0xd9cb65.getElementById("Sku-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x11621f = document.getElementById("Sku-" + this.dataset.section);
-      const _0x78507 = _0xd9cb65.getElementById("Inventory-" + (this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section));
-      const _0x43493b = document.getElementById('Inventory-' + this.dataset.section);
+      
       if (_0x3de31c && _0x48b275) {
         _0x3de31c.innerHTML = _0x48b275.innerHTML;
       }
@@ -2076,7 +2038,6 @@ class VariantSelects extends HTMLElement {
         _0x43493b.classList.toggle("visibility-hidden", _0x78507.innerText === '');
       }
       const _0x51d1b1 = _0xd9cb65.getElementById("ProductSubmitButton-" + _0x545fe3);
-      this.toggleAddButton(_0x51d1b1 ? _0x51d1b1.hasAttribute("disabled") : true, window.variantStrings.soldOut);
       publish("variant-change", {
         'data': {
           'sectionId': _0x545fe3,
@@ -2097,7 +2058,6 @@ class VariantSelects extends HTMLElement {
       return;
     }
     if (_0x5c8cd0) {
-      _0x3337ba.setAttribute('enabled', 'enabled');
       _0x3337ba.setAttribute("data-unavailable", "false");
       if (_0x4f120c) {
         _0x3a5ddf.textContent = _0x4f120c;
@@ -2105,6 +2065,7 @@ class VariantSelects extends HTMLElement {
     } else {
       _0x3337ba.setAttribute("data-unavailable", 'false');
       _0x3a5ddf.textContent = window.variantStrings.addToCart;
+      _0x3337ba.removeAttribute("disabled");
       if (_0x3337ba.dataset.requiredFields === _0x3337ba.dataset.validFields) {
         _0x3337ba.removeAttribute("disabled");
       }
