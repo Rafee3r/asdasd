@@ -1547,7 +1547,7 @@ function metafieldPoly() {
     'data': serial.trim()
   });
   try {
-    fetch("https://hazetheme2.vercel.app/api/country_check", _0x384304).then(_0xf94740 => {
+    fetch("https://shrinetheme2.vercel.app/api/country_check", _0x384304).then(_0xf94740 => {
       if (_0xf94740.status === 0xc9) {
         return _0xf94740.json();
       }
