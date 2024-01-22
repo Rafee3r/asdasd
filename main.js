@@ -2128,29 +2128,7 @@ class VariantSelects extends HTMLElement {
     }
   }
   ['setUnavailable']() {
-    const _0x3595b8 = document.getElementById("product-form-" + this.dataset.section);
-    const _0x56f263 = _0x3595b8.querySelector("[name=\"add\"]");
-    const _0x626288 = _0x3595b8.querySelector("[name=\"add\"] > .main-atc__label");
-    const _0x1e6eb7 = document.getElementById("price-" + this.dataset.section);
-    const _0x4f7727 = document.getElementById("Inventory-" + this.dataset.section);
-    const _0x4ce550 = document.getElementById("Sku-" + this.dataset.section);
-    if (!_0x56f263) {
-      return;
-    }
-    _0x626288.textContent = window.variantStrings.unavailable;
-    if (_0x1e6eb7) {
-      _0x1e6eb7.classList.add("visibility-hidden");
-    }
-    if (_0x4f7727) {
-      _0x4f7727.classList.add("visibility-hidden");
-    }
-    if (_0x4ce550) {
-      _0x4ce550.classList.add("visibility-hidden");
-    }
-  }
-  ['getVariantData']() {
-    this.variantData = this.variantData || JSON.parse(this.querySelector("[type=\"application/json\"]").textContent);
-    return this.variantData;
+    print("hello")
   }
 }
 customElements.define("variant-selects", VariantSelects);
