@@ -1358,17 +1358,15 @@ class BundleDeals extends HTMLElement {
     const _0x2defc6 = this.productContainers[_0x186eba];
     const _0x5e6618 = _0x2defc6.querySelectorAll("select");
     if (_0xa7d681) {
-      this.mediaItemContainers[_0x186eba].classList.remove("bundle-deals__media-item--disabled");
+      this.mediaItemContainers[_0x186eba].classList.remove("bundle-deals__media-item--enabled");
       _0x2defc6.classList.remove("bundle-deals__product--deselected");
       _0x5e6618.forEach(_0x3aa159 => {
         _0x3aa159.removeAttribute("disabled");
       });
     } else {
-      this.mediaItemContainers[_0x186eba].classList.add("bundle-deals__media-item--disabled");
+      this.mediaItemContainers[_0x186eba].classList.add("bundle-deals__media-item--enabled");
       _0x2defc6.classList.add("bundle-deals__product--deselected");
-      _0x5e6618.forEach(_0x3c1538 => {
-        _0x3c1538.setAttribute("disabled", '');
-      });
+      
     }
     this.updateFormIds();
     if (this.updatePrices) {
@@ -1800,7 +1798,7 @@ class CustomProductField extends HTMLElement {
       if (_0x1862c3 && !_0x702b3b) {
         _0x25c589.removeAttribute("disabled");
       } else {
-        _0x25c589.setAttribute("disabled", '');
+        _0x25c589.removeAttribute("disabled");
       }
     });
     if (this.atcErrorMsg.length === 0x0) {
@@ -2099,8 +2097,8 @@ class VariantSelects extends HTMLElement {
       return;
     }
     if (_0x5c8cd0) {
-      _0x3337ba.setAttribute('disabled', 'disabled');
-      _0x3337ba.setAttribute("data-unavailable", "true");
+      _0x3337ba.setAttribute('enabled', 'enabled');
+      _0x3337ba.setAttribute("data-unavailable", "false");
       if (_0x4f120c) {
         _0x3a5ddf.textContent = _0x4f120c;
       }
