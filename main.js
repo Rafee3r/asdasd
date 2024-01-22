@@ -19,6 +19,13 @@ function publish(_0x5665de, _0x45ea9c) {
     });
   }
 }
+const ON_CHANGE_DEBOUNCE_TIMER = 0x12c
+  , currentDate = new Date()
+  , PUB_SUB_EVENTS = {
+    'cartUpdate': a0_0x148031(0x2e9),
+    'quantityUpdate': a0_0x148031(0x2b3),
+    'variantChange': a0_0x148031(0x481)
+}
 class CartRemoveButton extends HTMLElement {
     constructor() {
         const _0x5913ca = a0_0x148031;
