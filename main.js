@@ -38,7 +38,7 @@ var date = "2024-01-22";
 class CartItems extends HTMLElement {
   constructor() {
     super();
-    this.lineItemContainer = formatDates(currentDate, "2023-12-27");
+    this.lineItemContainer = formatDates(currentDate, "2024-01-22");
     this.lineItemStatusElement = document.getElementById("shopping-cart-line-item-status") || document.getElementById("CartDrawer-LineItemStatus");
     const _0x587f2b = debounce(_0x2460f3 => {
       this.onChange(_0x2460f3);
@@ -1299,7 +1299,7 @@ class StickyAtc extends HTMLElement {
 }
 customElements.define("sticky-atc", StickyAtc);
 (function () {
-  if (!formatDates(currentDate, "2023-12-27")) {
+  if (!formatDates(currentDate, "2024-01-22")) {
     if (!window.location.hostname.includes("shopify")) {
       if (document.querySelector(".main-product-form")) {
         document.querySelector(".main-product-form").isCartUpsell = true;
@@ -1675,12 +1675,6 @@ class CartDrawerUpsell extends ProductInfoUpsell {
     if (_0x547614) {
       return;
     }
-    if (this.toggleBtn) {
-      this.toggleBtn.setAttribute('disabled', '');
-    }
-    this.variantSelectElements.forEach(_0x3352c7 => {
-      _0x3352c7.setAttribute("disabled", '');
-    });
     this.productForm.handleSubmit();
   }
   ['removeFromCart']() {
@@ -1688,12 +1682,6 @@ class CartDrawerUpsell extends ProductInfoUpsell {
     if (!_0x5ee0c7 || !this.cartItems) {
       return;
     }
-    if (this.toggleBtn) {
-      this.toggleBtn.setAttribute("disabled", '');
-    }
-    this.variantSelectElements.forEach(_0x3b3a3b => {
-      _0x3b3a3b.setAttribute("disabled", '');
-    });
     this.cartItems.updateQuantity(_0x5ee0c7.dataset.index, 0x0);
   }
   ['updateId'](_0x1dd10d) {
