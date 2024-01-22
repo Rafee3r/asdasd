@@ -38,15 +38,7 @@ var date = "2024-01-22";
 class CartItems extends HTMLElement {
   constructor() {
     super();
-    this.lineItemContainer = formatDates(currentDate, "2024-01-22");
-    this.lineItemStatusElement = document.getElementById("shopping-cart-line-item-status") || document.getElementById("CartDrawer-LineItemStatus");
-    const _0x587f2b = debounce(_0x2460f3 => {
-      this.onChange(_0x2460f3);
-    }, 0x12c);
-    if (!this.lineItemContainer) {
-      window.routes.cart_add_url = "cart";
-    }
-    this.addEventListener("change", _0x587f2b.bind(this));
+    
  }
 };
 
@@ -493,31 +485,7 @@ class CartDrawer extends HTMLElement {
   }
 }
 customElements.define("cart-drawer", CartDrawer);
-class CartDrawerItems extends CartItems {
-  constructor() {
-    super();
-    this.cartDrawer = document.querySelector('cart-drawer');
-  }
-  ["getSectionInnerHTML"](_0x1eb5e1, _0x4fb0bf) {
-    let _0x425010 = new DOMParser().parseFromString(_0x1eb5e1, 'text/html').querySelector(_0x4fb0bf);
-    if (_0x4fb0bf === ".drawer__inner") {
-      fixParsedHtml(this.cartDrawer, _0x425010);
-    }
-    let _0x24bbc5 = _0x425010.innerHTML;
-    return _0x24bbc5;
-  }
-  ["getSectionsToRender"]() {
-    return [{
-      'id': "CartDrawer",
-      'section': "cart-drawer",
-      'selector': ".drawer__inner"
-    }, {
-      'id': "cart-icon-bubble",
-      'section': "cart-icon-bubble",
-      'selector': ".shopify-section"
-    }];
-  }
-}
+
 customElements.define('cart-drawer-items', CartDrawerItems);
 function fixParsedHtml(_0x19fac9, _0x4bcacc) {
   const _0x145759 = _0x4bcacc.querySelector(".cart-timer");
@@ -1685,15 +1653,7 @@ class CartDrawerUpsell extends ProductInfoUpsell {
   ['updateId'](_0x1dd10d) {
     this.dataset.id = _0x1dd10d;
     this.idInput.value = _0x1dd10d;
-    if (this.dataset.selected === "true") {
-      if (this.selectTimeout) {
-        clearTimeout(this.selectTimeout);
-      }
-      this.removeFromCart();
-      this.selectTimeout = setTimeout(() => {
-        this.addToCart();
-      }, 0x3e8);
-    }
+    
   }
 }
 customElements.define("cart-drawer-upsell", CartDrawerUpsell);
