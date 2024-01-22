@@ -1893,10 +1893,10 @@ class CartDrawerUpsell extends ProductInfoUpsell {
       return;
     }
     if (this.toggleBtn) {
-      this.toggleBtn.setAttribute('disabled', '');
+      this.toggleBtn.removeAttribute('disabled', '');
     }
     this.variantSelectElements.forEach(_0x3352c7 => {
-      _0x3352c7.setAttribute("disabled", '');
+      _0x3352c7.removeAttribute("disabled", '');
     });
     this.productForm.handleSubmit();
   }
@@ -1906,10 +1906,10 @@ class CartDrawerUpsell extends ProductInfoUpsell {
       return;
     }
     if (this.toggleBtn) {
-      this.toggleBtn.setAttribute("disabled", '');
+      this.toggleBtn.removeAttribute("disabled", '');
     }
     this.variantSelectElements.forEach(_0x3b3a3b => {
-      _0x3b3a3b.setAttribute("disabled", '');
+      _0x3b3a3b.removeAttribute("disabled", '');
     });
     this.cartItems.updateQuantity(_0x5ee0c7.dataset.index, 0x0);
   }
