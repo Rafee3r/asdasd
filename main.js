@@ -48,8 +48,8 @@ class CartItems extends HTMLElement {
     }
     this.addEventListener("change", _0x587f2b.bind(this));
  }
-];
-]
+};
+
 function handleDiscountForm(_0x40c819) {
   _0x40c819.preventDefault();
   const _0x32ad39 = _0x40c819.target.querySelector("[name=cart-discount-field]");
