@@ -45,7 +45,7 @@ class CartItems extends HTMLElement {
 function handleDiscountForm(_0x40c819) {
   _0x40c819.preventDefault();
   const _0x32ad39 = _0x40c819.target.querySelector("[name=cart-discount-field]");
-  const _0x4cfc0c = _0x40c819.target.querySelector('.cart-discount-form__error');
+  const _0x4cfc0c = _0x40c819.target.querySelector('.cart-discount-__error');
   const _0x274839 = _0x32ad39.value;
   if (_0x274839 === undefined || _0x274839.length === 0x0) {
     _0x4cfc0c.style.display = 'block';
@@ -1610,13 +1610,7 @@ class ProductInfoUpsell extends HTMLElement {
 }
 customElements.define('product-info-upsell', ProductInfoUpsell);
 class CartDrawerUpsell extends ProductInfoUpsell {
-  constructor() {
-    super();
-    this.cartDrawer = document.querySelector("cart-drawer");
-    this.cartItems = this.cartDrawer.querySelector("cart-drawer-items");
-    this.productForm = this.querySelector("product-form");
-    this.idInput = this.productForm.querySelector("[name=\"id\"]");
-  }
+  constructor() {}
   ["handleToggle"](_0x29631e) {
     if (_0x29631e.target.nodeName.toLowerCase() === 'select' || _0x29631e.target.nodeName.toLowerCase() === "option") {
       return;
@@ -1650,11 +1644,7 @@ class CartDrawerUpsell extends ProductInfoUpsell {
     }
     this.cartItems.updateQuantity(_0x5ee0c7.dataset.index, 0x0);
   }
-  ['updateId'](_0x1dd10d) {
-    this.dataset.id = _0x1dd10d;
-    this.idInput.value = _0x1dd10d;
-    
-  }
+  ['updateId'](_0x1dd10d) {}
 }
 customElements.define("cart-drawer-upsell", CartDrawerUpsell);
 function initTrapFocus() {
